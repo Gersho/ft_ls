@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 07:44:54 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/02/11 14:07:21 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	int		len1;
+	int		len2;
+	char	*ptr;
 
-	return 0;
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	ptr = malloc((len1 + len2 + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	ft_memcpy((ft_memcpy(ptr, s1, len1) + len1), s2, len2 + 1);
+	return (ptr);
 }

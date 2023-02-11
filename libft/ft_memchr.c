@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2020/11/23 13:40:31 by kzennoun          #+#    #+#             */
+/*   Updated: 2020/11/25 02:45:52 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char	*casted_s;
+	unsigned char	casted_c;
 
-	return 0;
+	casted_s = (unsigned char*)s;
+	casted_c = (unsigned char)c;
+	while (n > 0)
+	{
+		if (*casted_s == casted_c)
+			return (casted_s);
+		casted_s++;
+		n--;
+	}
+	return (NULL);
 }

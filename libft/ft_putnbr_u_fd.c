@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_u_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/01/20 11:24:56 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/02/11 14:06:38 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+void	ft_putnbr_u_fd(unsigned int nb, int fd)
 {
+	long unsigned int	long_nb;
 
-	return 0;
+	long_nb = nb;
+	if (long_nb >= 10)
+	{
+		ft_putnbr_fd(long_nb / 10, fd);
+		ft_putnbr_fd(long_nb % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(('0' + long_nb), fd);
+	}
 }

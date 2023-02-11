@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2020/11/29 12:22:29 by kzennoun          #+#    #+#             */
+/*   Updated: 2020/11/29 13:06:09 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-
-	return 0;
+	new->next = *alst;
+	*alst = new;
 }

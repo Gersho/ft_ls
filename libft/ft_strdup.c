@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2020/11/23 13:40:44 by kzennoun          #+#    #+#             */
+/*   Updated: 2020/11/25 06:16:11 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+char	*ft_strdup(const char *s1)
 {
+	int		len;
+	char	*ptr;
 
-	return 0;
+	len = ft_strlen(s1);
+	ptr = ft_calloc(len + 1, sizeof(char));
+	ft_strlcpy(ptr, s1, len + 1);
+	return (ptr);
 }

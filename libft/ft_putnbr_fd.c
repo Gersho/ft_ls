@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:36:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2023/02/11 21:46:09 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2020/11/28 13:48:51 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/02/11 14:06:43 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
 
-int main(void)
+void	ft_putnbr_fd(int nb, int fd)
 {
+	long int	long_nb;
 
-	return 0;
+	long_nb = nb;
+	if (long_nb < 0)
+	{
+		write(fd, "-", 1);
+		long_nb *= -1;
+	}
+	if (long_nb >= 10)
+	{
+		ft_putnbr_fd(long_nb / 10, fd);
+		ft_putnbr_fd(long_nb % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(('0' + long_nb), fd);
+	}
 }
