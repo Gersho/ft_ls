@@ -1,0 +1,71 @@
+
+General Instructions
+• Your project must be written in C.
+• The executable file must be named ft_ls.
+• You have to handle errors in a sensitive manner. In no way can your program quit
+in an unexpected manner (Segmentation fault, bus error, double free, etc). If you
+are unsure, handle the errors like ls.
+• Your program cannot have memory leaks.
+
+
+Within your mandatory part you are allowed to use the following functions:
+◦ write
+◦ opendir
+◦ readdir
+◦ closedir
+◦ stat
+◦ lstat
+◦ getpwuid
+◦ getgrgid
+◦ listxattr
+◦ getxattr
+◦ time
+◦ ctime
+◦ readlink
+◦ malloc
+◦ free
+◦ perror
+◦ strerror
+◦ exit
+
+• You are allowed to use other functions to carry out the bonus part as long as their
+use is justified during your defence. For example, to use tcgetattr is justified in
+certain case, to use printf because you are lazy isn’t. Be smart!
+
+
+Mandatory part
+• You must recode the system’s command ls.
+• Its behavior must be identical to the original ls command with the following variations:
+◦ Amongst the numerous options available, we are asking you to create the
+following: -l, -R, -a, -r and -t.
+
+-r, --reverse
+		reverse order while sorting
+
+-R, --recursive
+		list subdirectories recursively
+
+-a, --all
+		do not ignore entries starting with .
+		
+-l     use a long listing format
+
+-t     sort by modification time, newest first
+
+
+◦ You do not have to deal with the multiple column format for the exit when
+the option -l isn’t in the arguments.
+◦ You are not required to deal with ACL and extended attributes.
+◦ The overall display, depending on each option, must stay as identical as possible to the system command. We will be cordial when grading either the
+padding or the pagination, but no information can be missing.
+
+Bonus part
+Find below a few ideas of interesting bonuses you could create. Some could even be useful.
+You can, of course, invent your own, which will then be evaluated by your evaluators
+according to their own taste.
+• Management of ACL and extended attributes.
+• Management of the columns without the option -l. (man 4 tty)
+• Management of options -u, -f, -g, -d, ...
+• Management of views in colors (Similar to option -G)
+• Optimization of your code (What is the response time of your ls on a BIG ls -lR
+for example?)
