@@ -1,4 +1,4 @@
-SRCS	= main.c
+SRCS	= src/main.c
 
 OBJS		= $(SRCS:.c=.o)
 NAME		= ft_ls
